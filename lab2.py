@@ -16,6 +16,7 @@ calculate_bmi(weight=57, height=1.73)"""
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
+    display_main_menu()
     user_input = get_user_input()
     print(f"You Type: {user_input}")
     print(f"Average = {calc_average(user_input)}")
@@ -26,22 +27,14 @@ def main():
 
 
 def display_main_menu():
-    print("display_main_menu")
-
-
-def calc_average():
-    print("calc_average")
+    print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
 
 def get_user_input():
-    user_input = []
-    temp = 0
-    total = 0
-    while temp != -1:
-        temp = float(input("Enter Temperature (-1 to Exit): "))
-        if temp != -1:
-            user_input.append(temp)
-    return user_input
+    temp = input()
+    user_input = temp.split(",")
+    float_list = [float(item) for item in user_input]
+    return float_list
 
 
 def calc_average(user_input):
